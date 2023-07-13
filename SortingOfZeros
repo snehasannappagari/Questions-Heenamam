@@ -1,0 +1,50 @@
+package Array;
+
+public class SortingofZerosOnestwos {
+	
+	public static int[] print(int arr[],int n) 
+	{
+		int zerocnt,onecnt,i;
+		
+		zerocnt=onecnt=0;
+		for(i=0;i<n;i++) 
+		{
+			if(arr[i]==0)
+			{
+				++zerocnt;
+			}
+			if(arr[i]==1) {
+				++onecnt;
+			}
+		}
+		for(i=0;i<zerocnt;i++)
+		{
+			arr[i]=0;
+		}
+		for(i=zerocnt;i<zerocnt+onecnt;i++)
+		{
+			arr[i]=1;
+		}
+		for(i=zerocnt+onecnt;i<n;i++)
+		{
+			arr[i]=2;
+		}
+		return arr;
+	}
+	
+	
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {1,0,1,2,0,2,0,2,1};
+        int n=arr.length;
+		int res[]=print(arr,n);
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.println(res[i]);
+		}
+
+	}
+
+}
