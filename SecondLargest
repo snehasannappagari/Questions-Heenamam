@@ -1,0 +1,27 @@
+package Array;
+
+public class SecondLargest {
+	public static void main(String[] args) {
+		int arr[]= {7,13,6,31,14,29,44,3};
+		int n=arr.length;
+		int temp;
+		for(int i=0;i<n;i++)
+		{
+			for(int j=i+1;j<n;j++)
+			{
+				if(arr[i]>arr[j])
+				{
+					
+					temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+		System.out.println("Second largest:"+arr[n-2]);
+	}
+	
+
+
+
+}
